@@ -1,5 +1,5 @@
 # Fin_Tech
-=============
+
 - [week 1]():簡介 . 
 - [week 2]():專題介紹 . 
 - [week 3]():fugle＿串連api介紹、chatbot . 
