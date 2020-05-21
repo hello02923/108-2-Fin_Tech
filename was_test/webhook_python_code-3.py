@@ -12,6 +12,8 @@ from telegram.ext import Dispatcher, MessageHandler, Filters, CommandHandler
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton,ReplyKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 from fugle_realtime import intraday
+from telegram.ext import Updater
+
 
 
 # In[ ]:
@@ -232,8 +234,9 @@ dispatcher.add_handler(CommandHandler("open_close", open_close))
 
 dispatcher.add_handler(MessageHandler(Filters.text, reply_handler))
 
-if __name__ == '__main__':
-    app.run(port=5000)
+updater = Updater(token='TOKEN', use_context=True)
+# if __name__ == '__main__':
+#     app.run(port=5000)
 
 
 # In[ ]:
