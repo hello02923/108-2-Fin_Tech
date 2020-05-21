@@ -19,8 +19,8 @@ from telegram.ext import Updater
 # In[ ]:
 
 
-config = configparser.ConfigParser()
-config.read('config.ini')
+# config = configparser.ConfigParser()
+# config.read('config.ini')
 
 
 # In[ ]:
@@ -38,8 +38,8 @@ config.read('config.ini')
 # In[ ]:
 
 
-access_token = config['TELEGRAM']['ACCESS_TOKEN']
-webhook_url = config['TELEGRAM']['WEBHOOK_URL']
+# access_token = config['TELEGRAM']['ACCESS_TOKEN']
+# webhook_url = config['TELEGRAM']['WEBHOOK_URL']
 
 
 # ## delete webhook url
@@ -88,7 +88,7 @@ for i in df["symbol_id"]:
 app = Flask(__name__)
 
 # Initial bot by Telegram access token
-bot = telegram.Bot(token=config['TELEGRAM']['ACCESS_TOKEN'])
+# bot = telegram.Bot(token=config['TELEGRAM']['ACCESS_TOKEN'])
 api_token = "3e8308228d40d8e6253efc485aae7777"
 
 
@@ -234,7 +234,7 @@ dispatcher.add_handler(CommandHandler("open_close", open_close))
 
 dispatcher.add_handler(MessageHandler(Filters.text, reply_handler))
 
-updater = Updater(token='TOKEN', use_context=True)
+updater = Updater(token='1194508394:AAEUxbXzL7VChbyhkVzGisvbJEEj3oNSTHc', use_context=True)
 # if __name__ == '__main__':
 #     app.run(port=5000)
 
