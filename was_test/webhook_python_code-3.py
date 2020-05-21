@@ -12,7 +12,7 @@ from telegram.ext import Dispatcher, MessageHandler, Filters, CommandHandler
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton,ReplyKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 from fugle_realtime import intraday
-from telegram.ext import Updater
+
 
 
 
@@ -55,7 +55,7 @@ from telegram.ext import Updater
 # In[ ]:
 
 
-import requests
+# import requests
 
 
 # In[ ]:
@@ -85,7 +85,7 @@ for i in df["symbol_id"]:
 
 
 # Initial Flask app
-app = Flask(__name__)
+# app = Flask(__name__)
 
 # Initial bot by Telegram access token
 # bot = telegram.Bot(token=config['TELEGRAM']['ACCESS_TOKEN'])
@@ -97,7 +97,7 @@ def webhook_handler():
     if request.method == "POST":
         update = telegram.Update.de_json(request.get_json(force=True), bot)
         # Update dispatcher process that handler to process this message
-        dispatcher.process_update(update)
+        updater.dispatcher.process_update(update)
         print(1)
     return 'ok'
 
@@ -223,20 +223,23 @@ def reply_handler(bot, update):
 
     
     
-# This class dispatches all kinds of updates to its registered handlers.
-dispatcher = Dispatcher(bot, None)
+# This class dispatches all kinds of updates to its registered handlers
+updater = Updater(token='1194508394:AAEUxbXzL7VChbyhkVzGisvbJEEj3oNSTHc', use_context=True).
+updater.dispatcher = Dispatcher(bot, None)
 ##dispatcher.add_handler(CommandHandler('help', help_handler))
-dispatcher.add_handler(CommandHandler("start", start_handler))
-dispatcher.add_handler(CommandHandler("link", link))
-dispatcher.add_handler(CommandHandler("priceReference", priceReference))
-dispatcher.add_handler(CommandHandler("best5", best5))
-dispatcher.add_handler(CommandHandler("open_close", open_close))
+updater.dispatcher.add_handler(CommandHandler("start", start_handler))
+updater.dispatcher.add_handler(CommandHandler("link", link))
+updater.dispatcher.add_handler(CommandHandler("priceReference", priceReference))
+updater.dispatcher.add_handler(CommandHandler("best5", best5))
+updater.dispatcher.add_handler(CommandHandler("open_close", open_close))
 
-dispatcher.add_handler(MessageHandler(Filters.text, reply_handler))
+updater.dispatcher.add_handler(MessageHandler(Filters.text, reply_handler))
 
-updater = Updater(token='1194508394:AAEUxbXzL7VChbyhkVzGisvbJEEj3oNSTHc', use_context=True)
+
 # if __name__ == '__main__':
 #     app.run(port=5000)
+updater.start_polling()
+updater.idle()
 
 
 # In[ ]:
