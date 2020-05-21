@@ -233,7 +233,7 @@ dispatcher.add_handler(CommandHandler("open_close", open_close))
 dispatcher.add_handler(MessageHandler(Filters.text, reply_handler))
 
 if __name__ == '__main__':
-    app.run(port=7000)
+    app.run(port=5000)
 
 
 # In[ ]:
