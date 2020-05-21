@@ -224,7 +224,7 @@ def reply_handler(bot, update):
     
     
 # This class dispatches all kinds of updates to its registered handlers
-updater = Updater(token='1194508394:AAEUxbXzL7VChbyhkVzGisvbJEEj3oNSTHc', use_context=True).
+updater = Updater(token='1194508394:AAEUxbXzL7VChbyhkVzGisvbJEEj3oNSTHc')
 updater.dispatcher = Dispatcher(bot, None)
 ##dispatcher.add_handler(CommandHandler('help', help_handler))
 updater.dispatcher.add_handler(CommandHandler("start", start_handler))
