@@ -92,7 +92,7 @@ for i in df["symbol_id"]:
 api_token = "3e8308228d40d8e6253efc485aae7777"
 
 
-@app.route('/hook', methods=['POST'])
+# @app.route('/hook', methods=['POST'])
 def webhook_handler():
     if request.method == "POST":
         update = telegram.Update.de_json(request.get_json(force=True), bot)
