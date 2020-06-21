@@ -111,7 +111,7 @@ callbacks = keras.callbacks.TensorBoard(log_dir = logdir)
 # In[149]:
 
 
-history = model.fit(x_train, y_train, epochs=10,
+history = model.fit(x_train, y_train, epochs=300,
                     validation_data=(x_val, y_val),callbacks = [callbacks])
 
 
