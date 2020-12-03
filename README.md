@@ -8,4 +8,6 @@
 - [week 6]():DEMO展示. 
   - [實作](https://github.com/hello02923/Fin_Tech/tree/master/HW1):telegram chatbot. 
 - [week 7]():特徵擷取共線圖分析. 
+- [week 10~18]():實作time. 
+  - [實作]()
 ***
